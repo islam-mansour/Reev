@@ -29,21 +29,26 @@
             .btn{
                 float: right
             }
-            .card-title{
-                background-color: #c3c3c3;
-                padding: 10px;
+            .card{
+                width: 100%
             }
         </style>
     </head>
     <body>
         <div class="container">
             {% for offer in offers %}
-            <div class="row justify-content-center align-items-center text-center">
-                <div class="card" style="width: 50rem">
-                    <div class="card-body">
-                        <h5 class="card-title"> {{ offer.title }} </h5>
-                        <p class="card-text"> {{ offer.description }} </p>
-                        <a href="https://www.facebook.com/profile.php?id=100007510090781" target="_blank" class="btn btn-primary"> تواصل معنا </a>
+            <div class="row">
+                <div class="card">
+                    <div class="card-header">
+                        <a data-toggle="collapse" href="#card-{{offer.id}}" aria-expanded="true" aria-controls="test-block">
+                            <h5> {{ offer.title }} </h5>
+                        </a>
+                    </div>
+                    <div id="card-{{ offer.id }}" class="collapse">
+                        <div class="card-body">
+                            <p class="card-text"> {{ offer.description }} </p>
+                            <a href="https://www.facebook.com/messages/t/164363264187468" target="_blank" class="btn btn-primary"> تواصل معنا </a>
+                        </div>
                     </div>
                 </div>
             </div>
