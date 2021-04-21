@@ -15,12 +15,14 @@ import os
 import django_heroku
 
 
-# Activate Django-Heroku.
-django_heroku.settings(locals())
-
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
 
 
 # Quick-start development settings - unsuitable for production
@@ -33,8 +35,6 @@ SECRET_KEY = 'django-insecure-sseza@de#joeg+y+(4xa)6l^%r+o+kg&ujsy6(%309huj2br!m
 DEBUG = True
 ALLOWED_HOSTS = ['*']
 
-ALLOWED_HOSTS = []
-STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
