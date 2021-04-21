@@ -1,1 +1,1 @@
-web: gunicorn reev.wsgi
+web: gunicorn reev:app
